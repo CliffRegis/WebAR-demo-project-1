@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
-  
-    <script src="aframe/aframe.min.js"></script>
- 
-    <a-scene>
-    	<a-torus position="-2 1 -5" color="green" radius="1.2" animation="property:  components.material.material.color; type: color; to: red; dur: 1000; loop:true">
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+<script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
 
+<a-scene embedded arjs = 'trackingMethod: best;'>
+<a-anchor hit-testing-enabled='true'>
+<a-torus position="0 0.5 0" color="green" radius = "0.5">
+        <a-animation attribute="color"
+            dur = "10000"
+            from = "green"
+            to ="red"
+            repeat = "indefinite">
+        </a-animation>
+</a-torus>
+<a-plane src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/illustration/758px-Canestra_di_frutta_(Caravaggio).jpg" width="3.5" height="3.5" rotation = "-55 0 0" position="0 -1 0" color="purple">
+</a-plane>
+<a-cylinder color="yellow" height="2" radius="0.05" position="0 0 0"></a-cylinder>
+<a-cylinder color="blue" height="2" radius="0.05" position="1 0 0"></a-cylinder>
+<a-torus-knot color="orange" radius="0.5" position="1 0.5 0">
+<a-animation attribute="rotation"
+dur = "10000"
+fill="forwards"
+to="0 0 360"
+repeat="indefinite"></a-animation>
+</a-torus-knot>
 
-    	</a-torus>
-
-    	<a-plane width="7" height="7" rotation="-55 0 0" position="-3 -2 -5" color= "purple"></a-plane>
-    	<a-cylinder color="yellow" height="2" radius="0.05" position="-2 -1 -5"></a-cylinder>
-    	<a-cylinder color="blue" height="2" radius="0.05" position="-3 -1 -5"></a-cylinder>
-    	<a-torus-knot position="-3 1 -5" color="orange" radius="1.2" animation="property: rotation;dur:10000;fill:forwards;to:0 0 360;easing: linear; loop:true"></a-torus-knot>
-
-    	<a-plane width="9" height="2" position="3 1 -9"></a-plane>
-<a-text value="the fun house" color="black" width="10" position="-0.5 1 -6"></a-text>
-
-      <a-sky color="grey"></a-sky>
-    </a-scene>
-
+<a-plane src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/uvgrid/UV_Grid_Sm.jpg" width="2.5" height="1.5" position = "0 1 -1"></a-plane>
+<a-text value ="Welcome To The Fun House yo" color="black" width="3" position="-1 0.5 -1"></a-text>
+</a-anchor>
+<a-camera-static/>
+</a-scene>
 </html>
